@@ -6,7 +6,13 @@
 /*   By: bsouhar <bsouhar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 13:03:38 by bsouhar           #+#    #+#             */
-/*   Updated: 2023/11/28 13:03:39 by bsouhar          ###   ########.fr       */
+/*   Updated: 2023/11/30 10:36:23 by bsouhar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Bureaucrat.hpp"
+
+int main() {
+    Bureaucrat();
+    Bureaucrat("aba");
+}
