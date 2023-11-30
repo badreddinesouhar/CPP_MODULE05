@@ -14,7 +14,7 @@
 #define FORM_HPP
 
 #include <iostream>
-
+#include "Bureaucrat.hpp"
 class Form {
     private:
         const std::string _name;
@@ -26,9 +26,9 @@ class Form {
         ~Form();
         Form(const Form& copy);
         Form& operator=(const Form& form);
-        const std::string getName();
-        const int getGradeIn();
-        const int getGradeEx();
+        const std::string getName() const;
+        int getGradeIn() const;
+        int getGradeEx() const;
         bool getIndex();
         void beSigned(Bureaucrat bereaucrat);
         class GradeTooHighException : public std::exception {

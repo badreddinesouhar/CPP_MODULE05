@@ -1,7 +1,7 @@
 NAME = Bureaucrat
 
-SRC = Bureaucrat.cpp main.cpp
-HDF = Bureaucrat.hpp
+SRC = Bureaucrat.cpp main.cpp Form.cpp
+HDF = Bureaucrat.hpp Form.hpp
 OBJ = $(SRC:.cpp=.o )
 
 %.o: %.cpp $(HDF)

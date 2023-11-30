@@ -11,19 +11,21 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main() {
     try {
         Bureaucrat("badr", 15); 
         Bureaucrat a;
+        Form b;
         // std::cout << a << std::endl;
         // a.setGrade(1500);
         // std::cout << a << std::endl;
         // Bureaucrat(-1); 
-        Bureaucrat b("anass");
-        b.setGrade(150);
-        b.gradeIncrement();
-        b.gradeDecrement();
+        // Bureaucrat b("anass");
+        // b.setGrade(150);
+        // b.gradeIncrement();
+        // b.gradeDecrement();
         // b.gradeDecrement();
     }
     catch(std::exception & e) {
