@@ -6,7 +6,7 @@
 /*   By: bsouhar <bsouhar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 13:03:35 by bsouhar           #+#    #+#             */
-/*   Updated: 2023/11/30 13:12:42 by bsouhar          ###   ########.fr       */
+/*   Updated: 2023/12/01 13:27:07 by bsouhar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,14 @@ void Bureaucrat::gradeIncrement() {
         throw GradeTooLowException();
     }
     std::cout << "increment the grade for " << this->_name << std::endl;
+}
+
+void Bureaucrat::signForm(Form& form) {
+    if (form.getIndex() == true) {   
+        std::cout << this->getName() << " signed " << form.getName() << std::endl;   
+    } else {
+        std::cout << this->getName() << " couldn't sign " << form.getName() << " because grade are low" << std::endl;
+    }
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw() {

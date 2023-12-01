@@ -6,7 +6,7 @@
 /*   By: bsouhar <bsouhar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 13:16:20 by bsouhar           #+#    #+#             */
-/*   Updated: 2023/11/30 13:27:10 by bsouhar          ###   ########.fr       */
+/*   Updated: 2023/12/01 14:20:50 by bsouhar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 #include <iostream>
 #include "Bureaucrat.hpp"
+
+class Bureaucrat;
+
 class Form {
     private:
         const std::string _name;
@@ -24,17 +27,14 @@ class Form {
     public:
         Form();
         ~Form();
+        Form(std::string name, int in, int ex);
         Form(const Form& copy);
         Form& operator=(const Form& form);
         const std::string getName() const;
         int getGradeIn() const;
         int getGradeEx() const;
-        bool getIndex();
-        void beSigned(Bureaucrat bereaucrat);
-        class GradeTooHighException : public std::exception {
-            public:
-                const char* what() const throw();
-        };
+        bool getIndex() const ;
+        void beSigned(Bureaucrat& bereaucrat);
         class GradeTooLowException : public std::exception {
           public:
             const char* what() const throw();  
