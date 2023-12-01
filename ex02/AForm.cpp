@@ -1,61 +1,61 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsouhar <bsouhar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 13:16:24 by bsouhar           #+#    #+#             */
-/*   Updated: 2023/12/01 14:22:47 by bsouhar          ###   ########.fr       */
+/*   Updated: 2023/12/01 14:49:24 by bsouhar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
-Form::Form() : _name(""), gradeIn(0) , gradeEx(0){
+AForm::AForm() : _name(""), gradeIn(0) , gradeEx(0){
     this->index = false;
-    std::cout << "Form default constracror"  << std::endl;
+    std::cout << "AForm default constracror"  << std::endl;
 }
 
-Form::~Form() {
+AForm::~AForm() {
     std::cout << "destractor is called" << std::endl;
 }
 
-Form::Form(const Form& copy) : _name(copy.getName()) , gradeIn(copy.getGradeIn()), gradeEx(copy.getGradeIn()) {
+AForm::AForm(const AForm& copy) : _name(copy.getName()) , gradeIn(copy.getGradeIn()), gradeEx(copy.getGradeIn()) {
     // this->
 
 }
 
-Form::Form(std::string name, int in, int ex) : _name(name) , gradeIn(in), gradeEx(ex) {
-    std::cout << this->getName() << " Form constracted" << std::endl; 
+AForm::AForm(std::string name, int in, int ex) : _name(name) , gradeIn(in), gradeEx(ex) {
+    std::cout << this->getName() << " AForm constracted" << std::endl; 
 }
 
-Form& Form::operator=(const Form& form) {
+AForm& AForm::operator=(const AForm& form) {
     this->index = form.index;
     return *this;
 }
 
-int Form::getGradeEx() const {
+int AForm::getGradeEx() const {
     return gradeEx;
 }
 
-int Form::getGradeIn() const {
+int AForm::getGradeIn() const {
     return gradeIn;
 }
 
-bool Form::getIndex() const {
+bool AForm::getIndex() const {
     return index;
 }
 
-const std::string Form::getName() const {
+const std::string AForm::getName() const {
     return _name;
 }
 
-// bool Form::getIndex() {
+// bool AForm::getIndex() {
 //     return index;
 // }
 
-void Form::beSigned(Bureaucrat& bureaucrat) {
+void AForm::beSigned(Bureaucrat& bureaucrat) {
     if (bureaucrat.getGrade() < this->getGradeIn()) {
         this->index = true;
     } else {
@@ -63,7 +63,7 @@ void Form::beSigned(Bureaucrat& bureaucrat) {
     }
 }
 
-std::ostream& operator << (std::ostream& out, const Form& form) {
+std::ostream& operator << (std::ostream& out, const AForm& form) {
     out << form.getName() << " grade required to sign it " << form.getGradeIn() << " grade required to execute it " << form.getGradeEx() << " and it's signature status is ";
     if (!form.getIndex()) {
         out << "not signed";
@@ -73,6 +73,6 @@ std::ostream& operator << (std::ostream& out, const Form& form) {
     return out;
 }
 
-const char *Form::GradeTooLowException::what() const throw() {
-    return "grade is too low to signed the Form";
+const char *AForm::GradeTooLowException::what() const throw() {
+    return "grade is too low to signed the AForm";
 }

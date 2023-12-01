@@ -6,7 +6,7 @@
 /*   By: bsouhar <bsouhar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 13:03:35 by bsouhar           #+#    #+#             */
-/*   Updated: 2023/12/01 13:27:07 by bsouhar          ###   ########.fr       */
+/*   Updated: 2023/12/01 14:49:04 by bsouhar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ void Bureaucrat::gradeIncrement() {
     std::cout << "increment the grade for " << this->_name << std::endl;
 }
 
-void Bureaucrat::signForm(Form& form) {
+void Bureaucrat::signForm(AForm& form) {
     if (form.getIndex() == true) {   
         std::cout << this->getName() << " signed " << form.getName() << std::endl;   
     } else {
