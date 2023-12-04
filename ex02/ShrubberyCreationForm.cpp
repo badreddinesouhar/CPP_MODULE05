@@ -6,7 +6,7 @@
 /*   By: bsouhar <bsouhar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:27:52 by bsouhar           #+#    #+#             */
-/*   Updated: 2023/12/04 07:52:54 by bsouhar          ###   ########.fr       */
+/*   Updated: 2023/12/04 15:34:50 by bsouhar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,5 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {
     
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("", 145, 137) {
-    _target = target;
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("", 145, 137) , _target(target) {
 }
