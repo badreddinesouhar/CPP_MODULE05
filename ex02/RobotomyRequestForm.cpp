@@ -6,7 +6,7 @@
 /*   By: bsouhar <bsouhar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:27:49 by bsouhar           #+#    #+#             */
-/*   Updated: 2023/12/04 15:34:27 by bsouhar          ###   ########.fr       */
+/*   Updated: 2023/12/04 17:33:04 by bsouhar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,19 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("",72, 45) 
 
 RobotomyRequestForm::~RobotomyRequestForm() {
     
+}
+
+void RobotomyRequestForm::execute(Bureaucrat const & executor) {
+    if ((executor.getGrade() < this->getGradeEx()) && !this->getIndex() ) {
+        std::cout << "made a noise\n";
+        int i = std::rand();
+        std::cout << i << std::endl;
+        if (i % 2 == 0) {
+            std::cout << _target << " has been robotomizedn\n";
+        } else {
+            std::cout << _target << " robotomy failed\n";
+        }
+    } else {
+        throw GradeTooLowException();
+    }
 }

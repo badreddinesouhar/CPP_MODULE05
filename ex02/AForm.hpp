@@ -6,7 +6,7 @@
 /*   By: bsouhar <bsouhar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 13:16:20 by bsouhar           #+#    #+#             */
-/*   Updated: 2023/12/04 08:00:00 by bsouhar          ###   ########.fr       */
+/*   Updated: 2023/12/04 17:10:06 by bsouhar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define AFORM_HPP
 
 #include <iostream>
+#include <fstream>
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;

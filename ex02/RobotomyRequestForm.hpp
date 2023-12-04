@@ -6,7 +6,7 @@
 /*   By: bsouhar <bsouhar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:27:46 by bsouhar           #+#    #+#             */
-/*   Updated: 2023/12/04 07:51:53 by bsouhar          ###   ########.fr       */
+/*   Updated: 2023/12/04 17:22:20 by bsouhar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class RobotomyRequestForm : public AForm {
         RobotomyRequestForm();
         RobotomyRequestForm(std::string target);
         ~RobotomyRequestForm();
+        void execute(Bureaucrat const & executor);
 };
 
 #endif
