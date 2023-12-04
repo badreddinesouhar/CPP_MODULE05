@@ -6,7 +6,7 @@
 /*   By: bsouhar <bsouhar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 13:16:24 by bsouhar           #+#    #+#             */
-/*   Updated: 2023/12/01 14:49:24 by bsouhar          ###   ########.fr       */
+/*   Updated: 2023/12/04 08:02:28 by bsouhar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,16 +51,16 @@ const std::string AForm::getName() const {
     return _name;
 }
 
-// bool AForm::getIndex() {
-//     return index;
-// }
-
 void AForm::beSigned(Bureaucrat& bureaucrat) {
     if (bureaucrat.getGrade() < this->getGradeIn()) {
         this->index = true;
     } else {
         throw GradeTooLowException();
     }
+}
+
+void AForm::execute(Bureaucrat const & executor) {
+    
 }
 
 std::ostream& operator << (std::ostream& out, const AForm& form) {
