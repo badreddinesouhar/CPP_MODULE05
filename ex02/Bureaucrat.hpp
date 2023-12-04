@@ -6,7 +6,7 @@
 /*   By: bsouhar <bsouhar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:23:16 by bsouhar           #+#    #+#             */
-/*   Updated: 2023/12/01 14:48:39 by bsouhar          ###   ########.fr       */
+/*   Updated: 2023/12/04 17:39:43 by bsouhar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ class Bureaucrat {
     void gradeIncrement();
     void gradeDecrement();
     void signForm(AForm& form);
+    void executeForm(AForm const & form);
+
     class GradeTooHighException : public std::exception {
       public:
         const char* what() const throw();

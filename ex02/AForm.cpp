@@ -6,7 +6,7 @@
 /*   By: bsouhar <bsouhar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 13:16:24 by bsouhar           #+#    #+#             */
-/*   Updated: 2023/12/04 15:41:35 by bsouhar          ###   ########.fr       */
+/*   Updated: 2023/12/04 17:41:04 by bsouhar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,6 @@ void AForm::beSigned(Bureaucrat& bureaucrat) {
     } else {
         throw GradeTooLowException();
     }
-}
-
-void AForm::execute(Bureaucrat const & executor) {
-    executor.getGrade();
 }
 
 std::ostream& operator << (std::ostream& out, const AForm& form) {
