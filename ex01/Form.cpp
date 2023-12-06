@@ -6,7 +6,7 @@
 /*   By: bsouhar <bsouhar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 13:16:24 by bsouhar           #+#    #+#             */
-/*   Updated: 2023/12/01 14:22:47 by bsouhar          ###   ########.fr       */
+/*   Updated: 2023/12/06 15:03:10 by bsouhar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,11 @@ Form::~Form() {
     std::cout << "destractor is called" << std::endl;
 }
 
-Form::Form(const Form& copy) : _name(copy.getName()) , gradeIn(copy.getGradeIn()), gradeEx(copy.getGradeIn()) {
-    // this->
-
+Form::Form(const Form& copy) : _name(copy.getName()), index(copy.getIndex()), gradeIn(copy.getGradeIn()), gradeEx(copy.getGradeIn()) {
+    std::cout << "copy constractor has been called" << std::endl;
 }
 
-Form::Form(std::string name, int in, int ex) : _name(name) , gradeIn(in), gradeEx(ex) {
+Form::Form(std::string name, int in, int ex) : _name(name), gradeIn(in), gradeEx(ex) {
     std::cout << this->getName() << " Form constracted" << std::endl; 
 }
 

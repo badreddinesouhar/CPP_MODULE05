@@ -6,7 +6,7 @@
 /*   By: bsouhar <bsouhar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:27:38 by bsouhar           #+#    #+#             */
-/*   Updated: 2023/12/04 17:32:43 by bsouhar          ###   ########.fr       */
+/*   Updated: 2023/12/06 15:17:32 by bsouhar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,14 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("", 2
 }
 
 PresidentialPardonForm::~PresidentialPardonForm() {
+    
+}
+
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& copy) {
+    
+}
+
+PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& presidebtialpardonform) {
     
 }
 

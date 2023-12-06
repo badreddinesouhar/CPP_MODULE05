@@ -6,7 +6,7 @@
 /*   By: bsouhar <bsouhar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:27:49 by bsouhar           #+#    #+#             */
-/*   Updated: 2023/12/04 17:33:04 by bsouhar          ###   ########.fr       */
+/*   Updated: 2023/12/06 15:16:54 by bsouhar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,14 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("",72, 45) 
 }
 
 RobotomyRequestForm::~RobotomyRequestForm() {
+    
+}
+
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& copy) {
+    
+}
+
+RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& robotomyrequestform) {
     
 }
 
