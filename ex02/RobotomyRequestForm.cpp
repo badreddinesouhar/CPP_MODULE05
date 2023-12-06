@@ -6,7 +6,7 @@
 /*   By: bsouhar <bsouhar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:27:49 by bsouhar           #+#    #+#             */
-/*   Updated: 2023/12/06 15:16:54 by bsouhar          ###   ########.fr       */
+/*   Updated: 2023/12/06 15:43:15 by bsouhar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,13 @@ RobotomyRequestForm::~RobotomyRequestForm() {
     
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& copy) {
-    
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& copy): AForm("RobotMyRequest", 72, 45), _target(copy._target) {
+    std::cout << "copy constractor has been called" << std::endl;
 }
 
 RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& robotomyrequestform) {
-    
+    (void)robotomyrequestform;
+    return *this;
 }
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) {

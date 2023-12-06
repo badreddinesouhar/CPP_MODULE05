@@ -6,7 +6,7 @@
 /*   By: bsouhar <bsouhar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:27:52 by bsouhar           #+#    #+#             */
-/*   Updated: 2023/12/06 15:32:45 by bsouhar          ###   ########.fr       */
+/*   Updated: 2023/12/06 15:43:47 by bsouhar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& copy) 
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& shryberrycreationform) {
     std::cout << "copy assognment operator has been called" << std::endl;
+    (void)shryberrycreationform;
+    return *this;
 }
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) {
