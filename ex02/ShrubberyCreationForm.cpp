@@ -6,7 +6,7 @@
 /*   By: bsouhar <bsouhar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:27:52 by bsouhar           #+#    #+#             */
-/*   Updated: 2023/12/06 15:43:47 by bsouhar          ###   ########.fr       */
+/*   Updated: 2023/12/06 17:32:28 by bsouhar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,10 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
     return *this;
 }
 
-void ShrubberyCreationForm::execute(Bureaucrat const & executor) {
-    if ((executor.getGrade() < this->getGradeEx()) && !this->getIndex() ) {
-        std::ofstream file;
-        file.open(_target + "_shrubbery");
-        file << "binary tree\n";
-        file.close();
-    } else {
-        throw GradeTooLowException();
-    }
+void ShrubberyCreationForm::executed(Bureaucrat const & executor) const {
+    (void)executor;
+    std::ofstream file;
+    file.open(_target + "_shrubbery");
+    file << "binary tree\n";
+    file.close();
 }

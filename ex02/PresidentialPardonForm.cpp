@@ -6,7 +6,7 @@
 /*   By: bsouhar <bsouhar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:27:38 by bsouhar           #+#    #+#             */
-/*   Updated: 2023/12/06 15:46:04 by bsouhar          ###   ########.fr       */
+/*   Updated: 2023/12/06 17:32:07 by bsouhar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,7 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
     return *this;
 }
 
-void PresidentialPardonForm::execute(Bureaucrat const & executor) {
-    if ((executor.getGrade() < this->getGradeEx()) && !this->getIndex() ) {
-        std::cout << _target << " has been pardoned by Zaphod Beeblebrox\n";
-    } else {
-        throw GradeTooLowException();
-    }
+void PresidentialPardonForm::executed(Bureaucrat const & executor) const {
+    (void)executor;
+    std::cout << _target << " has been pardoned by Zaphod Beeblebrox\n";
 }

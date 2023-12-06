@@ -6,7 +6,7 @@
 /*   By: bsouhar <bsouhar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 13:16:20 by bsouhar           #+#    #+#             */
-/*   Updated: 2023/12/04 17:10:06 by bsouhar          ###   ########.fr       */
+/*   Updated: 2023/12/06 17:31:44 by bsouhar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ class AForm {
         int getGradeEx() const;
         bool getIndex() const ;
         void beSigned(Bureaucrat& bereaucrat);
-        virtual void execute(Bureaucrat const & executor) = 0;
+        virtual void executed(Bureaucrat const & execute) const = 0;
+        void execute(Bureaucrat const & executor) const;
         class GradeTooLowException : public std::exception {
           public:
             const char* what() const throw();  
