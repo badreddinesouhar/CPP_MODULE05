@@ -6,7 +6,7 @@
 /*   By: bsouhar <bsouhar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:27:52 by bsouhar           #+#    #+#             */
-/*   Updated: 2023/12/06 17:32:28 by bsouhar          ###   ########.fr       */
+/*   Updated: 2023/12/07 13:17:11 by bsouhar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,23 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 void ShrubberyCreationForm::executed(Bureaucrat const & executor) const {
     (void)executor;
+    // std::ofstream file;
+    // file.open(_target + "_shrubbery");
+    // file << TREE << std::endl;
+    // file.close();
     std::ofstream file;
     file.open(_target + "_shrubbery");
-    file << "binary tree\n";
+    if (!file.is_open()) {
+        std::cerr << "Error opening file for writing." << std::endl;
+        return;
+    }
+    // Draw a simple binary tree structure
+    file << "   *   " << std::endl;
+    file << "  / \\  " << std::endl;
+    file << " *   * " << std::endl;
+    file << "/ \\ / \\" << std::endl;
+    file << "*  * *  " << std::endl;
     file.close();
+    std::cout << "Binary tree has been drawn and saved to " << _target + "_shrubbery.txt" << std::endl;
 }
+
