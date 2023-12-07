@@ -6,7 +6,7 @@
 /*   By: bsouhar <bsouhar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 13:16:24 by bsouhar           #+#    #+#             */
-/*   Updated: 2023/12/04 17:41:04 by bsouhar          ###   ########.fr       */
+/*   Updated: 2023/12/06 17:30:46 by bsouhar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,8 @@ AForm::~AForm() {
     std::cout << "destractor is called" << std::endl;
 }
 
-AForm::AForm(const AForm& copy) : _name(copy.getName()) , gradeIn(copy.getGradeIn()), gradeEx(copy.getGradeIn()) {
-    // this->
-
+AForm::AForm(const AForm& copy) : _name(copy.getName()), index(copy.index), gradeIn(copy.getGradeIn()), gradeEx(copy.getGradeIn()) {
+    std::cout << "copy constractor has been called" << std::endl;
 }
 
 AForm::AForm(std::string name, int in, int ex) : _name(name) , gradeIn(in), gradeEx(ex) {
@@ -67,6 +66,14 @@ std::ostream& operator << (std::ostream& out, const AForm& form) {
         out << "is signed";
     }
     return out;
+}
+
+void AForm::execute(Bureaucrat const & executor) const {
+    if (this->getIndex() && getGradeEx() > executor.getGrade()) {
+        executed(executor);
+    } else {
+        throw GradeTooLowException();
+    }
 }
 
 const char *AForm::GradeTooLowException::what() const throw() {

@@ -6,7 +6,7 @@
 /*   By: bsouhar <bsouhar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 13:03:35 by bsouhar           #+#    #+#             */
-/*   Updated: 2023/12/04 17:39:08 by bsouhar          ###   ########.fr       */
+/*   Updated: 2023/12/06 17:30:32 by bsouhar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,9 +78,13 @@ int Bureaucrat::getGrade() const {
 }
 
 void Bureaucrat::executeForm(AForm const & form) {
-    std::cout << this->getName() << " executed " << form.getName();
+    try {
+        form.execute(*this);
+        std::cout << this->_name << " executed " << form.getName() << std::endl;
+    } catch(std::exception & e) {
+        std::cout << this->_name << " cnnot execute " << form.getName() << std::endl;
+    }
 }
-
 void Bureaucrat::gradeDecrement() {
     _grade += 1;
     if (_grade < 1){

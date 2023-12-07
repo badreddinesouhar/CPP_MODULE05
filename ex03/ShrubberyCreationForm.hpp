@@ -6,7 +6,7 @@
 /*   By: bsouhar <bsouhar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:27:55 by bsouhar           #+#    #+#             */
-/*   Updated: 2023/12/04 15:52:23 by bsouhar          ###   ########.fr       */
+/*   Updated: 2023/12/06 17:32:37 by bsouhar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ class ShrubberyCreationForm : public AForm {
         ShrubberyCreationForm();
         ShrubberyCreationForm(std::string target);
         ~ShrubberyCreationForm();
-        void execute(Bureaucrat const & executor);
+        ShrubberyCreationForm(const ShrubberyCreationForm& copy);
+        ShrubberyCreationForm& operator=(const ShrubberyCreationForm& shrubberycreatioform);
+        void executed(Bureaucrat const & execute) const ;
 };
 
 #endif
