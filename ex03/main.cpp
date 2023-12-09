@@ -12,17 +12,14 @@
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include "Intern.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 
 int main() {
-    try {
-        Bureaucrat ab("badr", 10);
-        ShrubberyCreationForm a("badr");
-        a.execute(ab);
-    }
-    catch(std::exception & e) {
-        std::cout << e.what() << std::endl;
-    }
+    Intern someRandomIntern;
+    AForm* rrf;
+
+    rrf = someRandomIntern.makeForm("Robotomy Request", "Bender");
 }

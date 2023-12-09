@@ -14,9 +14,19 @@
 #define INTERN_HPP
 
 #include <iostream>
+#include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 class Intern {
     private:
-}
+
+    public:
+        Intern();
+        ~Intern();
+        Intern& operator = (const Intern& intern);
+        Intern(const Intern& copy);
+        AForm& makeForm(std::string name, std::string target);
+
+};
 
 #endif

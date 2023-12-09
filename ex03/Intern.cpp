@@ -11,3 +11,19 @@
 /* ************************************************************************** */
 
 #include "Intern.hpp"
+
+Intern::Intern() {
+
+}
+
+Intern::~Intern() {
+
+}
+
+Intern& Intern::operator=(const Intern& intern) {
+
+}
+
+Intern::Intern(const Intern& copy) {
+
+}
