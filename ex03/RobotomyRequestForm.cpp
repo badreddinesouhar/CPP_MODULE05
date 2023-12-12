@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
+#include <cstdlib>
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm("",72, 45) {
     
@@ -27,7 +28,7 @@ RobotomyRequestForm::~RobotomyRequestForm() {
 void RobotomyRequestForm::execute(Bureaucrat const & executor) {
     if ((executor.getGrade() < this->getGradeEx()) && !this->getIndex() ) {
         std::cout << "made a noise\n";
-        int i = std::rand();
+        int i = rand();
         std::cout << i << std::endl;
         if (i % 2 == 0) {
             std::cout << _target << " has been robotomizedn\n";

@@ -16,6 +16,9 @@
 #include <iostream>
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 class Intern {
     private:
@@ -25,7 +28,7 @@ class Intern {
         ~Intern();
         Intern& operator = (const Intern& intern);
         Intern(const Intern& copy);
-        AForm& makeForm(std::string name, std::string target);
+        AForm *makeForm(std::string name, std::string target);
 
 };
 

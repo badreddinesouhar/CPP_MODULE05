@@ -19,7 +19,8 @@
 
 int main() {
     Intern someRandomIntern;
-    AForm* rrf;
+    // AForm* rrf;
 
-    rrf = someRandomIntern.makeForm("Robotomy Request", "Bender");
+    AForm* rrf = someRandomIntern.makeForm("Robotomy Request", "Bender");
+    (void)rrf;
 }
