@@ -6,7 +6,7 @@
 /*   By: bsouhar <bsouhar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:27:52 by bsouhar           #+#    #+#             */
-/*   Updated: 2023/12/06 17:32:28 by bsouhar          ###   ########.fr       */
+/*   Updated: 2023/12/16 12:54:29 by bsouhar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,58 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& copy) 
     std::cout << "copy constractor has been called" << std::endl;
 }
 
-ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& shryberrycreationform) {
-    std::cout << "copy assognment operator has been called" << std::endl;
-    (void)shryberrycreationform;
-    return *this;
-}
+// <<<<<<< HEAD
+// ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& shryberrycreationform) {
+//     std::cout << "copy assognment operator has been called" << std::endl;
+//     (void)shryberrycreationform;
+//     return *this;
+// }
 
-void ShrubberyCreationForm::executed(Bureaucrat const & executor) const {
-    (void)executor;
-    std::ofstream file;
-    file.open(_target + "_shrubbery");
-    file << "binary tree\n";
-    file.close();
+// void ShrubberyCreationForm::executed(Bureaucrat const & executor) const {
+//     (void)executor;
+//     std::ofstream file;
+//     file.open(_target + "_shrubbery");
+//     file << "binary tree\n";
+//     file.close();
+// =======
+// // void ShrubberyCreationForm::execute(Bureaucrat const & executor) {
+// //     if ((executor.getGrade() < this->getGradeEx()) && !this->getIndex() ) {
+// //         std::ofstream file;
+// //         file.open(_target + "_shrubbery");
+// //         file << "binary tree\n";
+// //         file.close();
+// //     } else {
+// //         throw GradeTooLowException();
+// //     }
+// // }
+
+// void ShrubberyCreationForm::execute(const Bureaucrat& executor) {
+//     if ((executor.getGrade() < this->getGradeEx()) && !this->getIndex()) {
+//         std::ofstream file;
+//         file.open((_target + "_shrubbery").c_str());  // Convert to const char*
+//         // if (!file.is_open()) {
+//         //     // Handle the case where the file couldn't be opened
+//         //     throw FileOpenException();
+//         // }
+//         file << "binary tree\n";
+//         file.close();
+//     } else {
+//         throw GradeTooLowException();
+//     }
+// >>>>>>> cd72d7b0ad2f95bc0248f9ec0ceb6651de6521f9
+// }
+
+void ShrubberyCreationForm::executed(const Bureaucrat& executor) const {
+    if ((executor.getGrade() < this->getGradeEx()) && !this->getIndex()) {
+        std::ofstream file;
+        file.open((_target + "_shrubbery").c_str());  // Convert to const char*
+        // if (!file.is_open()) {
+        //     // Handle the case where the file couldn't be opened
+        //     throw FileOpenException();
+        // }
+        file << "binary tree\n";
+        file.close();
+    } else {
+        throw GradeTooLowException();
+    }
 }

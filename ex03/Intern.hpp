@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsouhar <bsouhar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/28 13:03:38 by bsouhar           #+#    #+#             */
-/*   Updated: 2023/12/06 17:13:27 by bsouhar          ###   ########.fr       */
+/*   Created: 2023/12/04 19:18:22 by bsouhar           #+#    #+#             */
+/*   Updated: 2023/12/04 19:19:17 by bsouhar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef INTERN_HPP
+#define INTERN_HPP
+
+#include <iostream>
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
-#include "Intern.hpp"
-#include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 
-int main() {
-    Intern someRandomIntern;
-    // AForm* rrf;
+class Intern {
+    private:
 
-    AForm* rrf = someRandomIntern.makeForm("Robotomy Request", "Bender");
-    (void)rrf;
-}
+    public:
+        Intern();
+        ~Intern();
+        Intern& operator = (const Intern& intern);
+        Intern(const Intern& copy);
+        AForm *makeForm(std::string name, std::string target);
+
+};
+
+#endif
